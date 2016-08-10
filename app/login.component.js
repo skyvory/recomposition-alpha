@@ -9,19 +9,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var http_1 = require('@angular/http');
+var headers_1 = require('./common/headers');
 var LoginComponent = (function () {
-    function LoginComponent() {
+    function LoginComponent(router, http) {
+        this.router = router;
+        this.http = http;
         this.title = "Login pose";
     }
+    LoginComponent.prototype.login = function (event, username, password) {
+        var _this = this;
+        event.preventDefault();
+        var body = JSON.stringify({ username: username, password: password });
+        this.http.post('http://localhost/record/public/api/authenticate', body, { headers: headers_1.contentHeaders })
+            .subscribe(function (response) {
+            localStorage.setItem('id_token', response.json().token);
+            _this.router.navigate(['/home']);
+        }, function (error) {
+            console.log("ERROR", error.text());
+        });
+    };
     LoginComponent.prototype.ngOnInit = function () {
-        alert("no login yet");
+        console.log("no login yet");
     };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'my-login',
-            template: "\n\t<h1>Login is here</h1>\n\t",
+            templateUrl: './app/login.component.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router, http_1.Http])
     ], LoginComponent);
     return LoginComponent;
 }());
