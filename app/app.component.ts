@@ -9,7 +9,7 @@ import { LoginComponent } from './login.component';
 	<h1>{{title}}</h1>
 	<nav>
 	<a [routerLink]="['/home']" routerLinkActive="active">Dashboard</a>
-	<a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+	<a [routerLink]="['/vn']" routerLinkActive="active">Vn</a>
 	</nav>
 	<router-outlet></router-outlet>
 	`,

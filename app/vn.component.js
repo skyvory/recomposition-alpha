@@ -10,19 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Recomposition";
+var Vn = (function () {
+    function Vn() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n\t<h1>{{title}}</h1>\n\t<nav>\n\t<a [routerLink]=\"['/home']\" routerLinkActive=\"active\">Dashboard</a>\n\t<a [routerLink]=\"['/vn']\" routerLinkActive=\"active\">Vn</a>\n\t</nav>\n\t<router-outlet></router-outlet>\n\t",
-            directives: [router_1.ROUTER_DIRECTIVES]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    return Vn;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.Vn = Vn;
+var VnComponent = (function () {
+    function VnComponent(router) {
+        this.router = router;
+        this.vn = {
+            id: 1,
+            title_en: 'Chaod Head',
+        };
+    }
+    VnComponent = __decorate([
+        core_1.Component({
+            selector: 'my-vn',
+            template: "\n        <p>{{vn.title_en}}</p>\n        <h2>Tittle en supposed</h2>\n    "
+        }), 
+        __metadata('design:paramtypes', [router_1.Router])
+    ], VnComponent);
+    return VnComponent;
+}());
+exports.VnComponent = VnComponent;
+//# sourceMappingURL=vn.component.js.map

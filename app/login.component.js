@@ -30,6 +30,10 @@ var LoginComponent = (function () {
             console.log("ERROR", error.text());
         });
     };
+    LoginComponent.prototype.signup = function (event) {
+        // event.preventDefault();
+        // this.router.navigate(['/signup']);
+    };
     LoginComponent.prototype.ngOnInit = function () {
         console.log("no login yet");
     };

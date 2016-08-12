@@ -22,6 +22,11 @@ export class LoginComponent implements OnInit {
 				console.log("ERROR", error.text());
 			});
 	}
+
+	signup(event:any) {
+		// event.preventDefault();
+		// this.router.navigate(['/signup']);
+	}
 	
 	title = "Login pose";
 	ngOnInit() {

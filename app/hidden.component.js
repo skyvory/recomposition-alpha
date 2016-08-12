@@ -10,19 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "Recomposition";
+var HiddenComponent = (function () {
+    function HiddenComponent(router) {
+        this.router = router;
     }
-    AppComponent = __decorate([
+    HiddenComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n\t<h1>{{title}}</h1>\n\t<nav>\n\t<a [routerLink]=\"['/home']\" routerLinkActive=\"active\">Dashboard</a>\n\t<a [routerLink]=\"['/vn']\" routerLinkActive=\"active\">Vn</a>\n\t</nav>\n\t<router-outlet></router-outlet>\n\t",
-            directives: [router_1.ROUTER_DIRECTIVES]
+            selector: 'hidden-one',
+            template: "\n        <p>The Hidden One</p>\n    "
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [router_1.Router])
+    ], HiddenComponent);
+    return HiddenComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HiddenComponent = HiddenComponent;
+//# sourceMappingURL=hidden.component.js.map

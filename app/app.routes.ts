@@ -1,13 +1,14 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { LoginComponent } from './login.component';
+import { VnComponent } from './vn.component';
 import { AuthGuard } from './common/auth.guard';
 
 const routes: RouterConfig = [
     // { path: '', component: HomeComponent, terminal: true },
     {
     	path: '',
-    	redirectTo: '/home',
+    	redirectTo: '/vn',
     	pathMatch: 'full'
     },
     {
@@ -20,9 +21,13 @@ const routes: RouterConfig = [
     	component: LoginComponent
     },
 	{
+		path: 'vn',
+		component: VnComponent,
+	},
+	{
 		path: '**',
 		component: LoginComponent
-	}
+	},
 ];
 
 export const appRouterProviders = [
