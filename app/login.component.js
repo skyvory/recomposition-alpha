@@ -40,7 +40,7 @@ var LoginComponent = (function () {
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'my-login',
-            templateUrl: './app/login.component.html',
+            templateUrl: 'recomposition/app/login.component.html',
         }), 
         __metadata('design:paramtypes', [router_1.Router, http_1.Http])
     ], LoginComponent);

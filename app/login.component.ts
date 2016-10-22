@@ -5,7 +5,7 @@ import { contentHeaders } from './common/headers';
 
 @Component({
 	selector: 'my-login',
-	templateUrl: './app/login.component.html',
+	templateUrl: 'recomposition/app/login.component.html',
 })
 
 export class LoginComponent implements OnInit {
